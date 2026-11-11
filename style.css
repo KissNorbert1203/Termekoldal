@@ -4,7 +4,7 @@
 
 body {
     margin: 0;
-    padding: 20px 150px 20px 150px;
+    padding: 12px 150px 20px;
     color: #172230;
     background: #ffffff;
     font-family: Arial, sans-serif;
@@ -17,7 +17,7 @@ body {
 
 .felso-resz {
     display: grid;
-    grid-template-columns: minmax(460px, 1.2fr) 92px minmax(370px, 1fr) 174px;
+    grid-template-columns: minmax(0, 1.2fr) 92px minmax(0, 1fr) 174px;
     gap: 12px;
     min-height: 334px;
 }
@@ -118,6 +118,7 @@ h1 {
 .gombok {
     display: flex;
     gap: 12px;
+    width: calc(100% + 194px);
 }
 
 button {
@@ -131,7 +132,7 @@ button {
 }
 
 .kosar-gomb {
-    width: 58%;
+    flex: 0 0 calc(80% - 155px);
     color: #ffffff;
     background: #0875e8;
     border-color: #0875e8;
@@ -139,6 +140,12 @@ button {
 
 .kedvenc-gomb {
     flex: 1;
+    width: auto;
+}
+
+.termek-oldalsav {
+    display: flex;
+    flex-direction: column;
 }
 
 .termek-info {
