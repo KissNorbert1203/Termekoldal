@@ -1,6 +1,10 @@
 let obj = new Object();
 const http = new XMLHttpRequest();
 http.onload = function(){
+    if (this.status !== 200) {
+        alert("A termékadatok nem érhetők el.");
+        return;
+    }
     obj = JSON.parse(this.responseText);
     document.getElementById("kep").src = obj.image;
     document.getElementById("kep2").src = obj.image;
@@ -26,6 +30,9 @@ http.onload = function(){
     document.getElementById("velemenyNev2").innerHTML = obj.reviews[1].user
     document.getElementById("velemenySzoveg2").innerHTML = obj.reviews[1].comment
 
+}
+http.onerror = function(){
+    alert("A termékadatok nem érhetők el.");
 }
 http.open("GET", "termek.json");
 http.send();
